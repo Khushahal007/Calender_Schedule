@@ -4,10 +4,15 @@ dotenv.config()
 const db=require('./db')
 const calendarModel=require('./Model/calenderModel')
 const {calenderController}=require('./Routes/calenderRoute')
+const bodyParser = require("body-parser");
+
+// const cors=require("cors")
 
 const app = express()
 
-app.use(express.json());
+// app.use(express.json());
+app.use(bodyParser.json());
+// app.use(cors())
 app.get('/', (req, res) => {
    res.send("Server is running Succcessfuly")
 })
